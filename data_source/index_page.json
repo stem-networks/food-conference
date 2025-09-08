@@ -7,7 +7,7 @@
         },
         "important_dates": {
             "category": "important_dates",
-            "content": "Stay ahead by marking your calendars with these crucial deadlines for the upcoming Nutrition Conference. Timely registration and submissions will ensure you make the most of this premier event.",
+            "content": "Stay ahead by marking your calendars with these crucial deadlines for the upcoming Food Science and Technology Conference. Timely registration and submissions will ensure you make the most of this premier event.",
             "headding": "Important Dates"
         },
         "Explore_Our_Comprehensive_Networking_Services": {
@@ -17,22 +17,22 @@
         },
         "Be_A_Volunteer": {
             "category": "Be_A_Volunteer",
-            "content": "Get ready to become a part of our event - Nutrition Conference 2026! Volunteer with us to help operate the event, and learn, and network with leaders of Nutrition care and research. ",
+            "content": "Get ready to become a part of our event - Food Science and Technology Conference 2026! Volunteer with us to help operate the event, and learn, and network with leaders of Food Science and Technology care and research. ",
             "headding": "Be A Volunteer"
         },
         "Submit_Your_Abstract": {
             "category": "Submit_Your_Abstract",
-            "content": "Submit your abstract to the Nutrition Conference 2026 and take your science forward on insulin therapy, prevention methods, and digital health. Collaborate with worldwide as they help shape the future of Nutrition care.",
+            "content": "Submit your abstract to the Food Science and Technology Conference 2026 and take your science forward on insulin therapy, prevention methods, and digital health. Collaborate with worldwide as they help shape the future of Nutrition care.",
             "headding": "Submit Your Abstract"
         },
         "sessions": {
             "category": "sessions",
-            "content": "The Nutrition Conference will bring together some of the brightest minds around the world for the best innovative treatments and precision medicine in Nutrition care, and digital health. Experts will deliver actionable insights to advance better patient outcomes while dealing with the session global challenges in preventing and managing Nutrition.",
+            "content": "The Food Science and Technology Conference will bring together some of the brightest minds around the world for the best innovative treatments and precision medicine in Nutrition care, and digital health. Experts will deliver actionable insights to advance better patient outcomes while dealing with the session global challenges in preventing and managing Nutrition.",
             "headding": "Sessions"
         },
         "footer_content": {
             "category": "footer_content",
-            "content": "Welcome to our Nutrition Conference 2026, a venue where dedicated professionals will get together to share cutting-edge innovations and best practices in Nutrition care and management.",
+            "content": "Welcome to our Food Science and Technology Conference 2026, a venue where dedicated professionals will get together to share cutting-edge innovations and best practices in Nutrition care and management.",
             "headding": "Footer Content"
         },
         "offers_content": {
@@ -57,12 +57,12 @@
         "17": {
             "banner_conent_id": "17",
             "image": "images/banner.jpg",
-            "headding": "Global Perspectives in Nutrition and Endocrinology",
-            "tag_line": "Nutrition Conference - September 23-24, 2026 in Berlin, Germany",
-            "content": "The Nutrition Conference will bring the latest Nutrition research, care, and technology. Download the brochure to learn the most important sessions, expert speakers, and networking opportunities that will shape the future of Nutrition care.",
+            "headding": "Global Perspectives in Food Science and Technology",
+            "tag_line": "Food Science and Technology-September 23-24, 2026 in Berlin, Germany",
+            "content": "The Food Science and Technology Conference will bring the latest Food Science and Technology research, care, and technology. Download the brochure to learn the most important sessions, expert speakers, and networking opportunities that will shape the future of Food Science and Technology.",
             "page": "index",
             "status": "1",
-            "cid": "10042"
+            "cid": "10043"
         }
     },
     "sessions": [

@@ -130,19 +130,19 @@
     "venue_images": {
         "29": {
             "image": "images/g1.webp",
-            "alt_text": "British Museum"
+            "alt_text": "Reichstag Building"
         },
         "30": {
             "image": "images/g2.webp",
-            "alt_text": "Tower of Germany"
+            "alt_text": "Potsdamer Platz"
         },
         "31": {
             "image": "images/g3.webp",
-            "alt_text": "Buckingham Palace"
+            "alt_text": "Tiergarten Park"
         },
         "32": {
             "image": "images/g4.webp",
-            "alt_text": "Germany Eye"
+            "alt_text": "Museum Island"
         }
     }
 }

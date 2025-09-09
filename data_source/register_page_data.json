@@ -2,10 +2,10 @@
     "accommodation_prices": [
         {
             "id": "14",
-            "single": "250",
+            "single": "200",
             "doubl": "270",
             "tri": "0",
-            "accompanying": "200",
+            "accompanying": "150",
             "created_dt": "2024-07-15 15:05:58",
             "updated_dt": "2024-05-10 12:45:31",
             "status": "1",

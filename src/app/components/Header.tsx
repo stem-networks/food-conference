@@ -32,7 +32,13 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
   const navItems = generalData?.display_features || {}
 
 
-  const presenterFee = registerData?.increment_price["Presenter (In-Person)"]?.total || "0";
+  // const presenterFee = registerData?.increment_price["Presenter (In-Person)"]?.total || "0";
+  const [presenterFee, setPresenterFee] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fee = registerData?.increment_price["Presenter (In-Person)"]?.total || null;
+    setPresenterFee(fee);
+  }, [registerData])
 
   const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(true);
   const [dropdownStates, setDropdownStates] = useState<Record<string, boolean>>(
@@ -111,7 +117,7 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                   >
                     Register Now
                   </Link>
-                  <span> For Only ${presenterFee}</span>
+                  {presenterFee && <span> For Only ${presenterFee}</span>}
                 </li>
                 <li className="text-right">{general.venue_p1 || ""}</li>
               </ul>
@@ -250,10 +256,10 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                             </Link>
                             <ul
                               className={`dropdown-menu ${dropdownStates[
-                                  item.title.toLowerCase().replace(" ", "")
-                                ]
-                                  ? "show"
-                                  : ""
+                                item.title.toLowerCase().replace(" ", "")
+                              ]
+                                ? "show"
+                                : ""
                                 }`}
                             >
                               {item.subItems.map(
@@ -357,10 +363,10 @@ const Header: React.FC<HeaderProps> = ({ generalData, registerData }) => {
                             </Link>
                             <ul
                               className={`dropdown-menu ${dropdownStates[
-                                  item.title.toLowerCase().replace(" ", "")
-                                ]
-                                  ? "show"
-                                  : ""
+                                item.title.toLowerCase().replace(" ", "")
+                              ]
+                                ? "show"
+                                : ""
                                 }`}
                             >
                               {item.subItems.map(

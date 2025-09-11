@@ -564,8 +564,7 @@ const RegisterDetails = ({ generalInfo }: RegisterDetailsClientProps) => {
               Something Went Wrong! Please Check Before Retrying
             </h4>
             <div style={styles.content1}>
-              <p>
-                The required access token is missing or invalid. Please verify your registration link or contact the administrator at <Link href={`mailto:${generalInfo.cemail}`} title={`mailto:${generalInfo.cemail}`}>{generalInfo.cemail}</Link>.
+              <p>Kindly verify your registration link or contact the administrator at <Link href={`mailto:${generalInfo.cemail}`} title={`mailto:${generalInfo.cemail}`}>{generalInfo.cemail}</Link>.
               </p>
             </div>
           </div>

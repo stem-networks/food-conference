@@ -21,6 +21,7 @@ import {
   emptyRegisterInfo,
 } from "@/lib/fallbacks";
 import WhatsAppWidget from "./components/WhatsAppWidget";
+// import MediaCollaborators from "./components/MediaCollaborators";
 
 async function safeFetch<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
@@ -173,13 +174,14 @@ export default async function RootLayout({
   };
 
   const GA_ID = process.env.GOOGLE_ANALYTICS_ID;
+  const isGTM = GA_ID?.startsWith("GTM-");
 
   return (
     <html lang="en">
       <head>
         <link rel="icon" href="/images/images/favicon.png" />
         {/* Google Tag Manager */}
-        <Script
+        {/* <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
           strategy="afterInteractive"
         />
@@ -190,7 +192,45 @@ export default async function RootLayout({
           gtag('js', new Date());
           gtag('config', '${GA_ID}');
           `}
-        </Script>
+        </Script> */}
+
+        {/* GA4 / Universal Analytics */}
+        {!isGTM && GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+              crossOrigin="anonymous"
+            />
+            <Script id="google-tag-manager-config" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
+
+        {/* Google Tag Manager */}
+        {isGTM && (
+          <Script id="gtm-script" strategy="afterInteractive">
+            {`
+              (function(w,d,s,l,i){
+                w[l]=w[l]||[];
+                w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+                var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),
+                    dl=l!='dataLayer'?'&l='+l:'';
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${GA_ID}');
+            `}
+          </Script>
+        )}
+
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -198,6 +238,18 @@ export default async function RootLayout({
         />
       </head>
       <body>
+
+        {isGTM && (
+          <noscript>
+            <iframe
+              src={`https://www.googletagmanager.com/ns.html?id=${GA_ID}`}
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+            />
+          </noscript>
+        )}
+
         {/* Toast container - only one instance needed */}
         <ToastContainer
           position="top-right"
@@ -208,9 +260,10 @@ export default async function RootLayout({
         />
         <Header generalData={generaldata} registerData={registerData} />
         {children}
+        {/* <MediaCollaborators />  */}
         <PartneredContent />
         <Footer indexPageData={indexPageData} generalData={generaldata} />
-        <WhatsAppWidget />
+        <WhatsAppWidget /> 
       </body>
     </html>
   );

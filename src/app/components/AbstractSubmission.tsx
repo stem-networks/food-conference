@@ -771,6 +771,39 @@ const AbstractSubmission: React.FC<GeneralInfoProps> = ({ generalInfo }) => {
       });
 
       if (response.ok) {
+
+        // -----------------------------
+        // Trigger send-to-cms with submit_status = "1"
+        // -----------------------------
+        try {
+          // Build the plain-text auto data (same shape as used by handleBlur autosave)
+          const updatedAutoData: FormAutoData = {
+            title: formData.title || "",
+            name: formData.name || "",
+            first_name: "",
+            last_name: "",
+            email: formData.email || "",
+            alt_email: formData.alt_email || "",
+            phone: formData.phone || "",
+            whatsapp_number: formData.whatsapp_number || "",
+            city: formData.city || "",
+            country: formData.country || "",
+            organization: formData.organization || "",
+            intrested: formData.intrested || "",
+            abstract_title: formData.abstract_title || "",
+            message: formData.message || "",
+            form_type: "abstract",
+            submit_status: "1", // <-- mark as submitted
+          };
+
+          const cmsResult = await sendFullFormData(updatedAutoData);
+          if (!cmsResult) {
+            console.warn("send-to-cms returned no data or failed. Check server logs.");
+          }
+        } catch (cmsErr) {
+          console.error("Error while calling send-to-cms after submit:", cmsErr);
+        }
+
         setShowModal(true);
 
         setFormData({
